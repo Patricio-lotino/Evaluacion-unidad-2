@@ -1,4 +1,4 @@
-# Example MVC project with Express and Handlebars
+# MVC project with Express and Handlebars. Unit Evaluation 2
 
 This project is a base example for MVC pattern with Express and Handlebars. For dependencies installation you can use:
 
