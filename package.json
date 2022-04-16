@@ -1,7 +1,7 @@
 {
-  "name": "base-express-mvc-project",
-  "version": "1.0.3",
-  "description": "This project is a base example for MVC pattern with Express and Handlebars",
+  "name": "evaluacion-unidad-2-bitacora",
+  "version": "1.0.1",
+  "description": "This project is a vehicle log with MVC pattern in NodeJS",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
@@ -16,7 +16,8 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "hbs": "^4.2.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3"
   },
   "devDependencies": {
     "eslint": "^8.11.0",
