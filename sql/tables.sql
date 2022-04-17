@@ -1,14 +1,16 @@
 CREATE TABLE users (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	first_name VARCHAR(90) NOT NULL,
-	last_name VARCHAR(90) NOT NULL,
-	email VARCHAR(255) NOT NULL
+	first_name VARCHAR(50) NOT NULL,
+	last_name VARCHAR(50) NOT NULL,
+	department VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE articles (
+CREATE TABLE log (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	title VARCHAR(255) NOT NULL,
-	content TEXT,
+	move_date DATE NOT NULL,
+	patenty VARCHAR(10) NOT NULL,
+	initial_kilometer INT NOT NULL,
+	final_kilometer INT NOT NULL,
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	user_id INT,
 	KEY user_id_idx(user_id)
