@@ -16,6 +16,8 @@ CREATE TABLE log (
 	KEY user_id_idx(user_id)
 );
 
-INSERT INTO users (first_name, last_name, email) VALUES (
-	"Pepe", "Frog", "contacto@pepeblog.com"
-);
+INSERT INTO users (first_name, last_name, department) VALUES (’Juan’, ’Pérez’, ’Operaciones’);
+(first_name, last_name, department) VALUES (’Carlos’, ’González’, ’Administración’);
+(first_name, last_name, department) VALUES (’Pedro’, ’Sepúlveda’, ’Adquisiciones’);
+(first_name, last_name, department) VALUES (’Luis’, ’Muñoz’, ’Mantención’);
+(first_name, last_name, department) VALUES (’Jorge’, ’Carrasco’, ’Mantención’);
