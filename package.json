@@ -1,7 +1,7 @@
 {
   "name": "evaluacion-unidad-2-bitacora",
   "version": "1.0.1",
-  "description": "This project is a vehicle log with MVC pattern in NodeJS",
+  "description": "This project is a example for MVC pattern in NodeJS",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",

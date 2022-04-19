@@ -14,6 +14,7 @@ const articlesController = new ArticlesController(sqlClient)
 
 // Routes
 router.get('/', articlesController.renderHomeWithArticles)
+router.get('/about', pageController.renderAbout)
 
 router.get('/articles/create', articlesController.renderArticleCreationForm)
 router.post('/articles/create', articlesController.insertAndRenderArticle)
