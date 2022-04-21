@@ -1,4 +1,4 @@
-class ArticlesDAO {
+class StoriesDAO {
   constructor (dbClient) {
     this.db = dbClient
     this.getAll = this.getAll.bind(this)
@@ -20,14 +20,14 @@ class ArticlesDAO {
     return rows[0]
   }
 
-  async create (article) {
-    const response = await this.db.query('INSERT INTO articles (title, content, image) VALUES (?, ?, ?)', [article.title, article.content, article.image])
+  async create (storie) {
+    const response = await this.db.query('INSERT INTO articles (title, content, image) VALUES (?, ?, ?)', [storie.title, storie.content, storie.image])
     const result = response[0]
     return result.insertId
   }
 
-  async update (article) {
-    const response = await this.db.query('UPDATE articles SET title = ?, content = ?, image = ? WHERE id = ?', [article.title, article.content, article.image, article.id])
+  async update (storie) {
+    const response = await this.db.query('UPDATE articles SET title = ?, content = ?, image = ? WHERE id = ?', [storie.title, storie.content, storie.image, storie.id])
     const result = response[0]
     return result
   }
@@ -39,4 +39,4 @@ class ArticlesDAO {
   }
 }
 
-module.exports = ArticlesDAO
+module.exports = StoriesDAO

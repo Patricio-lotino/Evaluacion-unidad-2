@@ -1,5 +1,5 @@
 const express = require('express')
-const ArticlesController = require('./controllers/ArticlesController')
+const StoriesController = require('./controllers/StoriesController')
 const PageController = require('./controllers/PageController')
 const SqlClient = require('./lib/SqlClient')
 
@@ -10,21 +10,21 @@ const sqlClient = new SqlClient()
 
 // Controllers
 const pageController = new PageController()
-const articlesController = new ArticlesController(sqlClient)
+const storiesController = new StoriesController(sqlClient)
 
 // Routes
-router.get('/', articlesController.renderHomeWithArticles)
+router.get('/', storiesController.renderHomeWithStories)
 router.get('/about', pageController.renderAbout)
 
-router.get('/articles/create', articlesController.renderArticleCreationForm)
-router.post('/articles/create', articlesController.insertAndRenderArticle)
+router.get('/stories/create', storiesController.renderStorieCreationForm)
+router.post('/stories/create', storiesController.insertAndRenderStorie)
 
-router.get('/articles/:id', articlesController.renderSingleArticle)
+router.get('/stories/:id', storiesController.renderSingleStorie)
 
-router.get('/articles/:id/update', articlesController.renderArticleUpdateForm)
-router.post('/articles/:id/update', articlesController.updateAndRenderArticle)
+router.get('/stories/:id/update', storiesController.renderStorieUpdateForm)
+router.post('/stories/:id/update', storiesController.updateAndRenderStorie)
 
-router.post('/articles/:id/delete', articlesController.deleteArticleAndRenderResponse)
+router.post('/stories/:id/delete', storiesController.deleteStorieAndRenderResponse)
 
 router.get('*', pageController.renderNotFound)
 
