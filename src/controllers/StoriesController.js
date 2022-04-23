@@ -33,6 +33,7 @@ class StoriesController {
       res.render('storie', {
         id,
         title: storie.title,
+        topic: storie.topic,
         content: storie.content,
         image: storie.image
       })
@@ -60,6 +61,7 @@ class StoriesController {
       res.render('storie-form', {
         id,
         title: storie.title,
+        topic: storie.topic,
         content: storie.content,
         image: storie.image
       })
@@ -71,10 +73,11 @@ class StoriesController {
 
   async insertAndRenderStorie (req, res) {
     const title = req.body.title
+    const topic = req.body.topic
     const content = req.body.content
     const image = req.body.image
 
-    const storie = { title, content, image }
+    const storie = { title, topic, content, image }
 
     try {
       const id = await this.storiesDao.create(storie)
@@ -89,11 +92,12 @@ class StoriesController {
   async updateAndRenderStorie (req, res) {
     const id = req.params.id
     const title = req.body.title
+    const topic = req.body.topic
     const content = req.body.content
     const image = req.body.image
 
     try {
-      const storie = { title, content, id, image }
+      const storie = { title, topic, content, id, image }
 
       await this.storiesDao.update(storie)
 

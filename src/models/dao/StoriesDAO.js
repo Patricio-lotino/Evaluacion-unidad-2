@@ -9,31 +9,31 @@ class StoriesDAO {
   }
 
   async getAll () {
-    const response = await this.db.query('SELECT id, title, content, image FROM articles')
+    const response = await this.db.query('SELECT id, title, topic, content, image FROM stories')
     const rows = response[0]
     return rows
   }
 
   async getById (id) {
-    const response = await this.db.query('SELECT id, title, content, image FROM articles WHERE id = ?', [id])
+    const response = await this.db.query('SELECT id, title, topic, content, image FROM stories WHERE id = ?', [id])
     const rows = response[0]
     return rows[0]
   }
 
   async create (storie) {
-    const response = await this.db.query('INSERT INTO articles (title, content, image) VALUES (?, ?, ?)', [storie.title, storie.content, storie.image])
+    const response = await this.db.query('INSERT INTO stories (title, topic, content, image) VALUES (?, ?, ?)', [storie.title, storie.topic, storie.content, storie.image])
     const result = response[0]
     return result.insertId
   }
 
   async update (storie) {
-    const response = await this.db.query('UPDATE articles SET title = ?, content = ?, image = ? WHERE id = ?', [storie.title, storie.content, storie.image, storie.id])
+    const response = await this.db.query('UPDATE stories SET title = ?, topic = ?, content = ?, image = ? WHERE id = ?', [storie.title, storie.topic, storie.content, storie.image, storie.id])
     const result = response[0]
     return result
   }
 
   async delete (id) {
-    const response = await this.db.query('DELETE FROM articles WHERE id = ?', [id])
+    const response = await this.db.query('DELETE FROM stories WHERE id = ?', [id])
     const result = response[0]
     return result
   }
