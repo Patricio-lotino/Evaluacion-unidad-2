@@ -11,6 +11,7 @@ CREATE TABLE stories (
 	title VARCHAR(255) NOT NULL,
 	content TEXT,
 	topic VARCHAR(255) NOT NULL,
+	image VARCHAR(255),
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	user_id INT,
 	KEY user_id_idx(user_id)
