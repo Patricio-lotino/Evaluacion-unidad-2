@@ -34,8 +34,7 @@ class StoriesController {
         id,
         title: storie.title,
         topic: storie.topic,
-        content: storie.content,
-        image: storie.image
+        content: storie.content
       })
     } catch (error) {
       console.log(error)
@@ -62,8 +61,7 @@ class StoriesController {
         id,
         title: storie.title,
         topic: storie.topic,
-        content: storie.content,
-        image: storie.image
+        content: storie.content
       })
     } catch (error) {
       console.log(error)
@@ -75,9 +73,8 @@ class StoriesController {
     const title = req.body.title
     const topic = req.body.topic
     const content = req.body.content
-    const image = req.body.image
 
-    const storie = { title, topic, content, image }
+    const storie = { title, topic, content }
 
     try {
       const id = await this.storiesDao.create(storie)
@@ -94,10 +91,9 @@ class StoriesController {
     const title = req.body.title
     const topic = req.body.topic
     const content = req.body.content
-    const image = req.body.image
 
     try {
-      const storie = { title, topic, content, id, image }
+      const storie = { title, topic, content, id }
 
       await this.storiesDao.update(storie)
 
